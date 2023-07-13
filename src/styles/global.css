@@ -16,3 +16,15 @@
     width: 1em; /* Also needed for space (tweak if needed) */
     margin-left: -1em; /* Also needed for space (tweak if needed) */
   }
+
+
+
+.hov:hover{
+    color:#64CCC5
+}
+
+.btnHov:hover{
+    background-color:#64CCC5 ;
+    color: white;
+}
+

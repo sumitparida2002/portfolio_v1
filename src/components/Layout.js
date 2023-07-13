@@ -27,6 +27,11 @@ const Layout = ({ pageTitle, children }) => {
         <h1>{pageTitle}</h1>
         {children}
       </main>
+      <footer className="mt-[20rem]">
+        <p className="w-[100%] text-sm  text-center text-slate-300">
+          Designed and Developed by Sumit Parida
+        </p>
+      </footer>
     </div>
   );
 };
