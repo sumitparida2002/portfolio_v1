@@ -1,0 +1,18 @@
+.pageLinks li:hover{
+    color: #64CCC5;
+}
+
+.pageLinks li{
+    padding: 0 .7rem;
+}
+
+.pageLinks .resume{
+    padding: 0.4rem 0.725rem;
+
+
+}
+
+.pageLinks .resume:hover{
+    background-color:#64CCC5 ;
+    color: white;
+}
