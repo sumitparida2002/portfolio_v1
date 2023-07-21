@@ -13,11 +13,33 @@ const IndexPage = () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       console.log(entry);
+      if (entry.target.id == "landing" && entry.isIntersecting) {
+        document.querySelector(".landingI").classList.add("active");
+        document.querySelector(".aboutI").classList.remove("active");
+        document.querySelector(".projectsI").classList.remove("active");
+        document.querySelector(".contactI").classList.remove("active");
+        console.log("yo");
+      } else if (entry.target.id == "about" && entry.isIntersecting) {
+        document.querySelector(".aboutI").classList.add("active");
+        document.querySelector(".landingI").classList.remove("active");
+        document.querySelector(".projectsI").classList.remove("active");
+        document.querySelector(".contactI").classList.remove("active");
+      } else if (entry.target.id == "projects" && entry.isIntersecting) {
+        document.querySelector(".projectsI").classList.add("active");
+        document.querySelector(".landingI").classList.remove("active");
+        document.querySelector(".aboutI").classList.remove("active");
+        document.querySelector(".contactI").classList.remove("active");
+      } else if (entry.target.id == "contact" && entry.isIntersecting) {
+        document.querySelector(".contactI").classList.add("active");
+        document.querySelector(".landingI").classList.remove("active");
+        document.querySelector(".aboutI").classList.remove("active");
+        document.querySelector(".projectsI").classList.remove("active");
+      }
     });
   });
 
-  for (let section of sections) {
-    observer.observe(section);
+  for (let i = 0; i < sections.length; i++) {
+    observer.observe(sections.item(i));
   }
 
   return (
@@ -43,7 +65,10 @@ const IndexPage = () => {
       </nav>
       <main className="flex">
         <div className="content lg:w-[70%] mx-auto">
-          <section className="lg:w-[70%] mx-auto mt-[10rem] sec">
+          <section
+            className="lg:w-[70%] mx-auto mt-[10rem] pb-[8rem] sec"
+            id="landing"
+          >
             <p className="text-[#64CCC5] ">Hi, my name is</p>
             <h1 className="text-7xl text-slate-200 mt-[1rem] font-bold">
               Sumit Parida.
@@ -59,7 +84,7 @@ const IndexPage = () => {
           </section>
 
           <section
-            className="lg:w-[67%] mx-auto pt-[rem] scroll-child sec"
+            className="lg:w-[70%] mx-auto pt-[8rem] scroll-child sec"
             id="about"
           >
             <div className=" py-0 border-b-[1px] border-slate-500 w-[60%]">
@@ -107,7 +132,7 @@ const IndexPage = () => {
           </section>
           <section
             id="projects"
-            className="lg:w-[70%] mx-auto  mt-[16rem] scroll-child sec"
+            className="lg:w-[100%] mx-auto  mt-[16rem] pt-[6rem] scroll-child sec"
           >
             <div className=" py-0 border-b-[1px] border-slate-500 w-[60%]  ">
               <h2 className="text-slate-200 text-3xl ">Projects</h2>
@@ -302,7 +327,7 @@ const IndexPage = () => {
 
           <section
             id="contact"
-            className="lg:w-[50%] mx-auto mt-[20rem] text-center scroll-child sec"
+            className="lg:w-[50%] mx-auto mt-[20rem] pt-[4rem] text-center scroll-child sec"
           >
             <h1 className="text-6xl text-slate-200">Send me a message!</h1>
             <p className="mt-6 ">
@@ -343,16 +368,15 @@ const IndexPage = () => {
           </section>
         </div>
 
-        <div className="pagination flex flex-col h-[85vh] justify-center">
-          <span className="active"></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className="pagination flex flex-col h-[85vh] gap-[10px] pl-2 justify-center">
+          <span className="landingI"></span>
+          <span className="aboutI"></span>
+          <span className="projectsI"></span>
+          <span className="contactI"></span>
         </div>
       </main>
 
-      <footer className="mt-[20rem]">
+      <footer className="mt-[6rem] mb-[2rem]">
         <p className="w-[100%] text-sm  text-center text-slate-300">
           Designed and Developed by Sumit Parida
         </p>

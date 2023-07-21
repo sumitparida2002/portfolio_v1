@@ -134,7 +134,7 @@ nav{
   
   .pagination{
     height: 80%; /* Full-height: remove this if you want "auto" height */
-    width: 100px; /* Set the width of the sidebar */
+    width: 90px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 0; /* Stay on top */
     bottom: -20%; /* Stay at the top */
@@ -177,3 +177,16 @@ nav{
   }
 
 
+  .active {
+    background: #64CCC5;
+    transform:rotate(45deg);
+    width:15px;
+    height: 15px;
+    border-radius: 0%;
+  }
+
+  .active, .pagination span{
+    border-radius: 0%;
+    width:15px;
+    height: 15px;
+  }
