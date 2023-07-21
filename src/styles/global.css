@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+.pageLinks li:hover{
+  color: #64CCC5;
+}
+
+.pageLinks li{
+  padding: 0 .7rem;
+}
+
+.pageLinks .resume{
+  padding: 0.4rem 0.725rem;
+
+
+}
+
+.pageLinks .resume:hover{
+  background-color:#64CCC5 ;
+  color: white;
+}
+
+nav{
+  z-index: 2;
+}
+
+
+
+
+.scroll{
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-child{
+    scroll-snap-align: start;
+}
 
 .skillList {
     list-style: none; /* Remove default bullets */
@@ -27,4 +61,119 @@
     background-color:#64CCC5 ;
     color: white;
 }
+
+.message{
+    resize: none;
+}
+
+
+
+ 
+  article.card {
+ 
+    width: 300px;
+    height: 300px;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  article.card .thumb {
+    width: auto;
+    height: 72%;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/new-york-city.png") no-repeat center;
+    background-size: cover;
+    border-radius: 3px;
+  }
+  article.card .infos {
+    width: auto;
+    height: 300px;
+    padding: 14px 24px;
+    background: #112240;
+    transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+  }
+  article.card .infos .title {
+
+    margin: 0;
+
+    font-family: 'Grotesque Black', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+ 
+  }
+
+  article.card .infos {
+    font-size: 0.85rem;
+  }
+
+  article.card .infos .txt {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    padding-top: .9rem;
+    border-top: 1px solid rgba(215, 215, 215, 0.2);
+    font-size: .90rem;
+    opacity: 0;
+    transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+  }
+ 
+  article.card:hover .infos {
+    transform: translateY(-72%);
+  } 
+
+
+
+ article.card:hover .infos .txt, article.card:hover .infos .details {
+    opacity: 1;
+
+  }
+
+
+
+  article.card:hover .title{
+    color:#64CCC5
+  }
+  
+  .pagination{
+    height: 80%; /* Full-height: remove this if you want "auto" height */
+    width: 100px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 0; /* Stay on top */
+    bottom: -20%; /* Stay at the top */
+    right: 0;
+    background-color: #001C2F; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+
+  .pagination span{
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  /* .pagination span.active{
+    border: 1px solid #112240;
+  } */
+  .pagination span:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid #64CCC5;
+    background: transparent;
+    border-radius: 50%;
+  }
+
+  .bod {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .bod::-webkit-scrollbar {
+      display: none;
+  }
+
 

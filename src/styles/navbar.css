@@ -16,3 +16,8 @@
     background-color:#64CCC5 ;
     color: white;
 }
+
+nav{
+    z-index: 2;
+}
+
