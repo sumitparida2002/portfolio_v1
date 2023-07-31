@@ -71,6 +71,9 @@ const IndexPage = () => {
           >
             <p className="text-[#64CCC5] ">Hi, my name is</p>
             <h1 className="text-7xl text-slate-200 mt-[1rem] font-bold">
+              Still in Work
+            </h1>
+            <h1 className="text-7xl text-slate-200 mt-[1rem] font-bold">
               Sumit Parida.
             </h1>
             <h1 className="text-6xl mt-[1rem] font-bold">
