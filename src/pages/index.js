@@ -36,11 +36,11 @@ const IndexPage = () => {
         }
       });
     });
-  };
 
-  for (let i = 0; i < sections.length; i++) {
-    observer.observe(sections.item(i));
-  }
+    for (let i = 0; i < sections.length; i++) {
+      observer.observe(sections.item(i));
+    }
+  };
 
   return (
     <body className="px-10 bod bg-[#001C30] text-slate-400 tracking-wider h-[100vh] scroll ">
