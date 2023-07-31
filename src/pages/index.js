@@ -1,42 +1,42 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
-import Layout from "../components/Layout.js";
-
 import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
-  const sections = document.getElementsByClassName("sec");
+  React.useEffect = () => {
+    const sections = document.getElementsByClassName("sec");
 
-  console.log(sections);
+    console.log(sections);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-      if (entry.target.id == "landing" && entry.isIntersecting) {
-        document.querySelector(".landingI").classList.add("active");
-        document.querySelector(".aboutI").classList.remove("active");
-        document.querySelector(".projectsI").classList.remove("active");
-        document.querySelector(".contactI").classList.remove("active");
-        console.log("yo");
-      } else if (entry.target.id == "about" && entry.isIntersecting) {
-        document.querySelector(".aboutI").classList.add("active");
-        document.querySelector(".landingI").classList.remove("active");
-        document.querySelector(".projectsI").classList.remove("active");
-        document.querySelector(".contactI").classList.remove("active");
-      } else if (entry.target.id == "projects" && entry.isIntersecting) {
-        document.querySelector(".projectsI").classList.add("active");
-        document.querySelector(".landingI").classList.remove("active");
-        document.querySelector(".aboutI").classList.remove("active");
-        document.querySelector(".contactI").classList.remove("active");
-      } else if (entry.target.id == "contact" && entry.isIntersecting) {
-        document.querySelector(".contactI").classList.add("active");
-        document.querySelector(".landingI").classList.remove("active");
-        document.querySelector(".aboutI").classList.remove("active");
-        document.querySelector(".projectsI").classList.remove("active");
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.target.id == "landing" && entry.isIntersecting) {
+          document.querySelector(".landingI").classList.add("active");
+          document.querySelector(".aboutI").classList.remove("active");
+          document.querySelector(".projectsI").classList.remove("active");
+          document.querySelector(".contactI").classList.remove("active");
+          console.log("yo");
+        } else if (entry.target.id == "about" && entry.isIntersecting) {
+          document.querySelector(".aboutI").classList.add("active");
+          document.querySelector(".landingI").classList.remove("active");
+          document.querySelector(".projectsI").classList.remove("active");
+          document.querySelector(".contactI").classList.remove("active");
+        } else if (entry.target.id == "projects" && entry.isIntersecting) {
+          document.querySelector(".projectsI").classList.add("active");
+          document.querySelector(".landingI").classList.remove("active");
+          document.querySelector(".aboutI").classList.remove("active");
+          document.querySelector(".contactI").classList.remove("active");
+        } else if (entry.target.id == "contact" && entry.isIntersecting) {
+          document.querySelector(".contactI").classList.add("active");
+          document.querySelector(".landingI").classList.remove("active");
+          document.querySelector(".aboutI").classList.remove("active");
+          document.querySelector(".projectsI").classList.remove("active");
+        }
+      });
     });
-  });
+  };
 
   for (let i = 0; i < sections.length; i++) {
     observer.observe(sections.item(i));
