@@ -2,46 +2,151 @@ import * as React from "react";
 import { Link } from "gatsby";
 
 import { StaticImage } from "gatsby-plugin-image";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const IndexPage = () => {
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth > 1450) {
+      setDesktop(true);
+    } else {
+      setDesktop(false);
+    }
+
+    const updateMedia = () => {
+      if (window.innerWidth > 1450) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
+    };
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  }, []);
+
   return (
     <body className="px-10 pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
-      <nav className="scroll-child pt-4">
-        <ul className="flex justify-between items-baseline">
-          <div>Sumit Parida</div>
-          <div className="flex pageLinks items-baseline ">
-            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <Link to="#about">About</Link>
-            </li>
-            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <Link to="#projects">Projects</Link>
-            </li>
-            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <Link to="#contact">Contact</Link>
-            </li>
-            <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
-              <Link to="#about">Resume</Link>
-            </li>
-          </div>
-        </ul>
-      </nav>
+      <div className="scroll-child"></div>
+      {isDesktop ? (
+        <nav className="scroll-child pt-8">
+          <ul className="flex justify-between items-baseline">
+            <div>Sumit Parida</div>
+            <div className="flex pageLinks items-baseline ">
+              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+                <Link to="#about">About</Link>
+              </li>
+              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+                <Link to="#projects">Projects</Link>
+              </li>
+              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+                <Link to="#contact">Contact</Link>
+              </li>
+              <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
+                <Link to="#about">Resume</Link>
+              </li>
+            </div>
+          </ul>
+        </nav>
+      ) : (
+        <div className="flex items-center justify-between border-b border-gray-400 py-8">
+          <a href="/">Sumit Parida</a>
+          <nav>
+            <section className="MOBILE-MENU flex lg:hidden">
+              <div
+                className="HAMBURGER-ICON space-y-2"
+                onClick={() => setIsNavOpen((prev) => !prev)}
+              >
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              </div>
+
+              <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+                <div
+                  className="absolute top-0 right-0 px-8 py-8"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  <svg
+                    className="h-8 w-8 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <ul className="flex flex-col items-center justify-between min-h-[250px]">
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="/about">About</a>
+                  </li>
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="/portfolio">Portfolio</a>
+                  </li>
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="/contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#projects">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <style>{`
+        .hideMenuNav {
+          display: none;
+        }
+        .showMenuNav {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          background: white;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+      `}</style>
+        </div>
+      )}
+
       <main className="flex">
         <div className="content lg:w-[70%] mx-auto">
           <section
-            className="lg:w-[70%] mx-auto mt-[6rem] pb-[8rem] sec"
+            className="lg:w-[70%] mt-[4rem] mx-auto md:mt-[6rem] pb-[8rem] sec"
             id="landing"
           >
             <p className="text-[#64cc95] dark:text-[#64CCC5] ">
               Hi, my name is
             </p>
 
-            <h1 className="text-7xl text-grey-900 dark:text-slate-200 mt-[1rem] font-bold">
+            <h1 className="md:text-7xl text-5xl text-grey-900 dark:text-slate-200 md:mt-[1rem] font-bold">
               Sumit Parida.
             </h1>
-            <h1 className="text-6xl mt-[1rem] font-bold">
+            <h1 className="md:text-6xl text-4xl md:mt-[1rem] font-bold">
               I'm a Full-Stack Web Developer.
             </h1>
-            <p className="w-[70%] mt-4 leading-7  ">
+            <p className="md:w-[70%] mt-4 leading-7 md:text-left w-[90%]   ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
               possimus tempora minus veniam harum velit accusamus. Expedita
               error minima dolorem repellat nam deleniti voluptatibus nostrum.
@@ -49,14 +154,21 @@ const IndexPage = () => {
           </section>
 
           <section
-            className="lg:w-[70%] mx-auto pt-[4rem] scroll-child sec"
+            className="lg:w-[70%] mx-auto pt-[2.5rem] md:pt-[4rem] scroll-child sec"
             id="about"
           >
             <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[60%]">
               <h2 className="text-slate-600 text-3xl ">About Me</h2>
             </div>
-            <div className="flex justify-between">
-              <div className="w-[60%] mt-8">
+            <div className="md:flex justify-between">
+              <div className="md:w-[35%] w-[100%]  mt-8">
+                <StaticImage
+                  objectFit="contain"
+                  src="https://htmlcolorcodes.com/assets/images/colors/light-green-color-solid-background-1920x1080.png"
+                  alt="image"
+                />
+              </div>
+              <div className="md:w-[60%] w-[100%] mt-8">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
                   mollitia nesciunt dolore qui labore ipsam similique eos.
@@ -65,12 +177,6 @@ const IndexPage = () => {
                   eum eos accusamus deserunt, officiis neque necessitatibus
                   debitis, voluptatem rerum quo ut magnam, distinctio molestias?
                   At!
-                </p>
-                <p className="pt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
-                  mollitia nesciunt dolore qui labore ipsam similique eos.
-                  Mollitia omnis harum sit, fuga ut rerum voluptates minus eum
-                  neque?
                 </p>
 
                 <p className="pt-2">
@@ -86,24 +192,17 @@ const IndexPage = () => {
                   <li>Lorem</li>
                 </ul>
               </div>
-              <div className="w-[35%]  mt-8">
-                <StaticImage
-                  objectFit="contain"
-                  src="https://htmlcolorcodes.com/assets/images/colors/light-green-color-solid-background-1920x1080.png"
-                  alt="image"
-                />
-              </div>
             </div>
           </section>
           <section
             id="projects"
-            className="lg:w-[100%] mx-auto  mt-[10rem] pt-[4rem] scroll-child sec"
+            className="lg:w-[100%] mx-auto  mt-[10rem] pt-[2.5rem] md:pt-[4rem] scroll-child sec"
           >
             <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[70%]  ">
               <h2 className="text-slate-600 text-3xl ">Projects</h2>
             </div>
 
-            <div className="flex flex-wrap w-[100%]  flex-row gap-[30px]">
+            <div className="flex flex-wrap w-[100%] justify-center  flex-row gap-[30px]">
               <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
                 <div className="thumb"></div>
                 <div className="infos dark:bg-[#112240] bg-white ">
@@ -292,12 +391,12 @@ const IndexPage = () => {
 
           <section
             id="contact"
-            className="lg:w-[50%] mx-auto mt-[14rem] pt-[4rem] text-center scroll-child sec"
+            className="lg:w-[50%] w-[100%] mx-auto mt-[14rem] pt-[2.5rem] md:pt-[4rem] text-center scroll-child sec"
           >
-            <h1 className="text-6xl text-slate-600 dark:text-slate-200">
+            <h1 className="md:text-6xl text-4xl text-slate-600 dark:text-slate-200">
               Send me a message!
             </h1>
-            <p className="mt-6 ">
+            <p className="mt-6 text-sm md:text-base ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
               labore dolorum itaque culpa, molestias officia autem delectus
               eligendi, natus vel eos corrupti est eveniet hic.
@@ -347,6 +446,7 @@ const IndexPage = () => {
           Designed and Developed by Sumit Parida
         </p>
       </footer>
+      <div className="scroll-child"></div>
     </body>
   );
 };
