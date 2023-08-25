@@ -1,6 +1,4 @@
-.pageLinks li:hover{
-    color: #64CCC5;
-}
+
 
 .pageLinks li{
     padding: 0 .7rem;
@@ -12,10 +10,6 @@
 
 }
 
-.pageLinks .resume:hover{
-    background-color:#64CCC5 ;
-    color: white;
-}
 
 nav{
     z-index: 2;
