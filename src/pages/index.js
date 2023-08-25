@@ -5,21 +5,21 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
   return (
-    <body className="px-10 pb-5 bod bg-[#001C30] text-slate-400 tracking-wider h-[100vh] scroll ">
+    <body className="px-10 pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
       <nav className="scroll-child pt-4">
         <ul className="flex justify-between items-baseline">
           <div>Sumit Parida</div>
           <div className="flex pageLinks items-baseline ">
-            <li>
+            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
               <Link to="#about">About</Link>
             </li>
-            <li>
+            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
               <Link to="#projects">Projects</Link>
             </li>
-            <li>
+            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
               <Link to="#contact">Contact</Link>
             </li>
-            <li className="resume border-[1px] rounded text-[#64CCC5] border-[#64CCC5]">
+            <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
               <Link to="#about">Resume</Link>
             </li>
           </div>
@@ -31,11 +31,11 @@ const IndexPage = () => {
             className="lg:w-[70%] mx-auto mt-[6rem] pb-[8rem] sec"
             id="landing"
           >
-            <p className="text-[#64CCC5] ">Hi, my name is</p>
-            <h1 className="text-7xl text-slate-200 mt-[1rem] font-bold">
-              Still in Work
-            </h1>
-            <h1 className="text-7xl text-slate-200 mt-[1rem] font-bold">
+            <p className="text-[#64cc95] dark:text-[#64CCC5] ">
+              Hi, my name is
+            </p>
+
+            <h1 className="text-7xl text-grey-900 dark:text-slate-200 mt-[1rem] font-bold">
               Sumit Parida.
             </h1>
             <h1 className="text-6xl mt-[1rem] font-bold">
@@ -49,11 +49,11 @@ const IndexPage = () => {
           </section>
 
           <section
-            className="lg:w-[70%] mx-auto pt-[6rem] scroll-child sec"
+            className="lg:w-[70%] mx-auto pt-[4rem] scroll-child sec"
             id="about"
           >
-            <div className=" py-0 border-b-[1px] border-slate-500 w-[60%]">
-              <h2 className="text-slate-200 text-3xl ">About Me</h2>
+            <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[60%]">
+              <h2 className="text-slate-600 text-3xl ">About Me</h2>
             </div>
             <div className="flex justify-between">
               <div className="w-[60%] mt-8">
@@ -77,7 +77,7 @@ const IndexPage = () => {
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Velit, similique:
                 </p>
-                <ul className="h-[13%] flex flex-col flex-wrap mt-4 skillList">
+                <ul className="h-[13%] flex flex-col dark:darkMode flex-wrap mt-4 skillList">
                   <li>Lorem</li>
                   <li>Lorem</li>
                   <li>Lorem</li>
@@ -97,17 +97,17 @@ const IndexPage = () => {
           </section>
           <section
             id="projects"
-            className="lg:w-[100%] mx-auto  mt-[10rem] pt-[6rem] scroll-child sec"
+            className="lg:w-[100%] mx-auto  mt-[10rem] pt-[4rem] scroll-child sec"
           >
-            <div className=" py-0 border-b-[1px] border-slate-500 w-[70%]  ">
-              <h2 className="text-slate-200 text-3xl ">Projects</h2>
+            <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[70%]  ">
+              <h2 className="text-slate-600 text-3xl ">Projects</h2>
             </div>
 
-            <div className="flex flex-wrap w-[100%] flex-row gap-[30px]">
-              <article className="card mt-8 text-slate-300">
+            <div className="flex flex-wrap w-[100%]  flex-row gap-[30px]">
+              <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
                 <div className="thumb"></div>
-                <div className={`infos `}>
-                  <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
+                <div className="infos dark:bg-[#112240] bg-white ">
+                  <h2 className="title flex px-2 w-[100%] justify-between items-center align-baseline">
                     <p>Lorem</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@ const IndexPage = () => {
                     #React #Javascript
                   </p>
                   <div className="h-[80%] flex flex-col justify-between">
-                    <p className="txt px-2 ">
+                    <p className="txt px-2 dark:text-slate-300 text-slate-800 ">
                       Join us for our Live Infinity Session in beautiful New
                       York City. This is a 3 day intensive workshop where you'll
                       learn how to become
@@ -138,7 +138,7 @@ const IndexPage = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-github text-slate-300"
+                        className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
                         viewBox="0 0 16 16"
                       >
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -148,7 +148,7 @@ const IndexPage = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-box-arrow-up-right text-slate-300"
+                        className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -165,9 +165,9 @@ const IndexPage = () => {
                 </div>
               </article>
 
-              <article className="card mt-8 text-slate-300">
+              <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95] ">
                 <div className="thumb"></div>
-                <div className={`infos `}>
+                <div className={`infos  dark:bg-[#112240] bg-white `}>
                   <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
                     <p>Lorem</p>
                     <svg
@@ -187,7 +187,7 @@ const IndexPage = () => {
                   <p className="date text-slate-400 px-2 text-[10px] ">
                     #React #Javascript
                   </p>
-                  <div className="h-[80%] flex flex-col justify-between">
+                  <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
                     <p className="txt px-2 ">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                       Porro aliquid est obcaecati iste autem a dolorem
@@ -200,7 +200,7 @@ const IndexPage = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-github text-slate-300"
+                        className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
                         viewBox="0 0 16 16"
                       >
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -210,7 +210,7 @@ const IndexPage = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-box-arrow-up-right text-slate-300"
+                        className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -227,9 +227,9 @@ const IndexPage = () => {
                 </div>
               </article>
 
-              <article className="card mt-8 text-slate-300">
+              <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
                 <div className="thumb"></div>
-                <div className={`infos `}>
+                <div className={`infos  dark:bg-[#112240] bg-white `}>
                   <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
                     <p>Lorem</p>
                     <svg
@@ -246,10 +246,10 @@ const IndexPage = () => {
                       />
                     </svg>
                   </h2>
-                  <p className="date text-slate-400 px-2 text-[10px] ">
+                  <p className="date text-slate-400 px-2 text-[10px]  ">
                     #React #Javascript
                   </p>
-                  <div className="h-[80%] flex flex-col justify-between">
+                  <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
                     <p className="txt px-2 ">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                       Porro aliquid est obcaecati iste autem a dolorem
@@ -261,7 +261,7 @@ const IndexPage = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-github text-slate-300"
+                        className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
                         viewBox="0 0 16 16"
                       >
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -271,7 +271,7 @@ const IndexPage = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-box-arrow-up-right text-slate-300"
+                        className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -292,9 +292,11 @@ const IndexPage = () => {
 
           <section
             id="contact"
-            className="lg:w-[50%] mx-auto mt-[12rem] pt-[4rem] text-center scroll-child sec"
+            className="lg:w-[50%] mx-auto mt-[14rem] pt-[4rem] text-center scroll-child sec"
           >
-            <h1 className="text-6xl text-slate-200">Send me a message!</h1>
+            <h1 className="text-6xl text-slate-600 dark:text-slate-200">
+              Send me a message!
+            </h1>
             <p className="mt-6 ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
               labore dolorum itaque culpa, molestias officia autem delectus
@@ -304,29 +306,35 @@ const IndexPage = () => {
             <div className="w-[100%]">
               <div className="flex justify-between mt-16 w-[100%]">
                 <div className="w-[100%] flex justify-start flex-col ">
-                  <p className="text-slate-300 text-left ">Your Name</p>
+                  <p className="dark:text-slate-300 text-slate-700 text-left ">
+                    Your Name
+                  </p>
                   <input
-                    className="bg-[#001C30] border-b border-[#64CCC5] focus:border-b-2 focus:outline-none  mt-1 w-[90%] text-left    "
+                    className="dark:bg-[#001C30] border-b border-[#64CCC5] focus:border-b-2 focus:outline-none  mt-1 w-[90%] text-left    "
                     placeholder="Enter your name"
                   ></input>
                 </div>
 
                 <div className="w-[100%] flex justify-start flex-col">
-                  <p className="text-slate-300 text-left">Your Email</p>
+                  <p className="dark:text-slate-300 text-slate-700 text-left">
+                    Your Email
+                  </p>
                   <input
-                    className="bg-[#001C30] border-b border-[#64CCC5] focus:border-b-2 focus:outline-none mt-1 w-[100%] "
+                    className="dark:bg-[#001C30] border-b border-[#64cc95] dark:border-[#64CCC5] focus:border-b-2 focus:outline-none mt-1 w-[100%] "
                     placeholder="Enter your email"
                   ></input>
                 </div>
               </div>
               <div className="mt-8">
-                <p className="text-slate-300 text-left">Your Message</p>
+                <p className="dark:text-slate-300 text-slate-700 text-left">
+                  Your Message
+                </p>
                 <textarea
-                  className="bg-[#001C30] border-b border-[#64CCC5] mt-1 h-auto w-[100%] message focus:outline-none  focus:border-b-2 "
+                  className="dark:bg-[#001C30] border-b border-[#64cc95] dark:border-[#64CCC5] mt-1 h-auto w-[100%] message focus:outline-none  focus:border-b-2 "
                   placeholder="Enter your name"
                 ></textarea>
               </div>
-              <button className="btnHov mt-8 border-2 rounded text-[#64CCC5] border-[#64CCC5] py-2 px-8 ">
+              <button className=" mt-8 rounded py-2 px-8 text-[#64cc95] dark:text-[#64CCC5] border-2 border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5] ">
                 Send
               </button>
             </div>

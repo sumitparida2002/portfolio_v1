@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.pageLinks li:hover{
-  color: #64CCC5;
-}
+
 
 .pageLinks li{
   padding: 0 .7rem;
@@ -16,10 +14,7 @@
 
 }
 
-.pageLinks .resume:hover{
-  background-color:#64CCC5 ;
-  color: white;
-}
+
 
 nav{
   z-index: 2;
@@ -41,26 +36,32 @@ nav{
     list-style: none; /* Remove default bullets */
     padding-left: 1rem;
 }
+
   
-.skillList li::before {
+.darkMode li::before {
     content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
     color: #64CCC5; /* Change the color */
     font-weight: bold; /* If you want it to be bold */
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1em; /* Also needed for space (tweak if needed) */
     margin-left: -1em; /* Also needed for space (tweak if needed) */
-  }
+}
 
+.skillList li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #64cc95; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
 
 
 .hov:hover{
     color:#64CCC5
 }
 
-.btnHov:hover{
-    background-color:#64CCC5 ;
-    color: white;
-}
+
 
 .message{
     resize: none;
@@ -88,9 +89,9 @@ nav{
     width: auto;
     height: 300px;
     padding: 14px 24px;
-    background: #112240;
     transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
   }
+
   article.card .infos .title {
 
     margin: 0;
@@ -128,9 +129,6 @@ nav{
 
 
 
-  article.card:hover .title{
-    color:#64CCC5
-  }
   
   .pagination{
     height: 80%; /* Full-height: remove this if you want "auto" height */
@@ -176,7 +174,7 @@ nav{
       display: none;
   }
 
-
+/* 
   .active {
     background: #64CCC5;
     transform:rotate(45deg);
@@ -189,4 +187,4 @@ nav{
     border-radius: 0%;
     width:15px;
     height: 15px;
-  }
+  } */
