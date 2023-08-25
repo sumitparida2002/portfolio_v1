@@ -99,7 +99,7 @@ const IndexPage = () => {
             id="projects"
             className="lg:w-[100%] mx-auto  mt-[10rem] pt-[6rem] scroll-child sec"
           >
-            <div className=" py-0 border-b-[1px] border-slate-500 w-[60%]  ">
+            <div className=" py-0 border-b-[1px] border-slate-500 w-[70%]  ">
               <h2 className="text-slate-200 text-3xl ">Projects</h2>
             </div>
 
