@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
   return (
-    <body className="px-10 bod bg-[#001C30] text-slate-400 tracking-wider h-[100vh] scroll ">
+    <body className="px-10 pb-5 bod bg-[#001C30] text-slate-400 tracking-wider h-[100vh] scroll ">
       <nav className="scroll-child pt-4">
         <ul className="flex justify-between items-baseline">
           <div>Sumit Parida</div>
@@ -19,7 +19,7 @@ const IndexPage = () => {
             <li>
               <Link to="#contact">Contact</Link>
             </li>
-            <li className="resume border-2 rounded text-[#64CCC5] border-[#64CCC5]">
+            <li className="resume border-[1px] rounded text-[#64CCC5] border-[#64CCC5]">
               <Link to="#about">Resume</Link>
             </li>
           </div>
@@ -28,7 +28,7 @@ const IndexPage = () => {
       <main className="flex">
         <div className="content lg:w-[70%] mx-auto">
           <section
-            className="lg:w-[70%] mx-auto mt-[10rem] pb-[8rem] sec"
+            className="lg:w-[70%] mx-auto mt-[6rem] pb-[8rem] sec"
             id="landing"
           >
             <p className="text-[#64CCC5] ">Hi, my name is</p>
@@ -49,7 +49,7 @@ const IndexPage = () => {
           </section>
 
           <section
-            className="lg:w-[70%] mx-auto pt-[8rem] scroll-child sec"
+            className="lg:w-[70%] mx-auto pt-[6rem] scroll-child sec"
             id="about"
           >
             <div className=" py-0 border-b-[1px] border-slate-500 w-[60%]">
@@ -97,7 +97,7 @@ const IndexPage = () => {
           </section>
           <section
             id="projects"
-            className="lg:w-[100%] mx-auto  mt-[16rem] pt-[6rem] scroll-child sec"
+            className="lg:w-[100%] mx-auto  mt-[10rem] pt-[6rem] scroll-child sec"
           >
             <div className=" py-0 border-b-[1px] border-slate-500 w-[60%]  ">
               <h2 className="text-slate-200 text-3xl ">Projects</h2>
@@ -292,7 +292,7 @@ const IndexPage = () => {
 
           <section
             id="contact"
-            className="lg:w-[50%] mx-auto mt-[20rem] pt-[4rem] text-center scroll-child sec"
+            className="lg:w-[50%] mx-auto mt-[12rem] pt-[4rem] text-center scroll-child sec"
           >
             <h1 className="text-6xl text-slate-200">Send me a message!</h1>
             <p className="mt-6 ">
