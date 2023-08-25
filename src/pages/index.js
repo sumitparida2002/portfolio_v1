@@ -4,44 +4,6 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
-  React.useEffect = () => {
-    const sections = document.getElementsByClassName("sec");
-
-    console.log(sections);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        console.log(entry);
-        if (entry.target.id == "landing" && entry.isIntersecting) {
-          document.querySelector(".landingI").classList.add("active");
-          document.querySelector(".aboutI").classList.remove("active");
-          document.querySelector(".projectsI").classList.remove("active");
-          document.querySelector(".contactI").classList.remove("active");
-          console.log("yo");
-        } else if (entry.target.id == "about" && entry.isIntersecting) {
-          document.querySelector(".aboutI").classList.add("active");
-          document.querySelector(".landingI").classList.remove("active");
-          document.querySelector(".projectsI").classList.remove("active");
-          document.querySelector(".contactI").classList.remove("active");
-        } else if (entry.target.id == "projects" && entry.isIntersecting) {
-          document.querySelector(".projectsI").classList.add("active");
-          document.querySelector(".landingI").classList.remove("active");
-          document.querySelector(".aboutI").classList.remove("active");
-          document.querySelector(".contactI").classList.remove("active");
-        } else if (entry.target.id == "contact" && entry.isIntersecting) {
-          document.querySelector(".contactI").classList.add("active");
-          document.querySelector(".landingI").classList.remove("active");
-          document.querySelector(".aboutI").classList.remove("active");
-          document.querySelector(".projectsI").classList.remove("active");
-        }
-      });
-    });
-
-    for (let i = 0; i < sections.length; i++) {
-      observer.observe(sections.item(i));
-    }
-  };
-
   return (
     <body className="px-10 bod bg-[#001C30] text-slate-400 tracking-wider h-[100vh] scroll ">
       <nav className="scroll-child pt-4">
@@ -369,13 +331,6 @@ const IndexPage = () => {
               </button>
             </div>
           </section>
-        </div>
-
-        <div className="pagination flex flex-col h-[85vh] gap-[10px] pl-2 justify-center">
-          <span className="landingI"></span>
-          <span className="aboutI"></span>
-          <span className="projectsI"></span>
-          <span className="contactI"></span>
         </div>
       </main>
 
