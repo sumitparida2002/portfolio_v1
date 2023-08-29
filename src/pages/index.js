@@ -6,109 +6,88 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const IndexPage = () => {
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
   const [isNavOpen, setIsNavOpen] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth > 1450) {
-      setDesktop(true);
-    } else {
-      setDesktop(false);
-    }
-
-    const updateMedia = () => {
-      if (window.innerWidth > 1450) {
-        setDesktop(true);
-      } else {
-        setDesktop(false);
-      }
-    };
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  }, []);
 
   return (
     <body className="px-10 pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
       <div className="scroll-child"></div>
-      {isDesktop ? (
-        <nav className="scroll-child pt-8">
-          <ul className="flex justify-between items-baseline">
-            <div>Sumit Parida</div>
-            <div className="flex pageLinks items-baseline ">
-              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-                <Link to="#about">About</Link>
-              </li>
-              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-                <Link to="#projects">Projects</Link>
-              </li>
-              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-                <Link to="#contact">Contact</Link>
-              </li>
-              <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
-                <Link to="#about">Resume</Link>
-              </li>
+      <nav className="scroll-child pt-8 hidden md:block ">
+        <ul className="flex justify-between items-baseline">
+          <div>Sumit Parida</div>
+          <div className="flex pageLinks items-baseline ">
+            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+              <Link to="#about">About</Link>
+            </li>
+            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+              <Link to="#projects">Projects</Link>
+            </li>
+            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+              <Link to="#contact">Contact</Link>
+            </li>
+            <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
+              <Link to="#about">Resume</Link>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <div className="flex items-center justify-between border-b border-gray-400 py-8 md:hidden">
+        <a href="/">Sumit Parida</a>
+        <nav>
+          <section className="MOBILE-MENU flex lg:hidden">
+            <div
+              className="HAMBURGER-ICON space-y-2"
+              onClick={() => setIsNavOpen((prev) => !prev)}
+            >
+              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
             </div>
+
+            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+              <div
+                className="absolute top-0 right-0 px-8 py-8"
+                onClick={() => setIsNavOpen(false)}
+              >
+                <svg
+                  className="h-8 w-8 text-gray-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </div>
+              <ul className="flex flex-col items-center justify-between min-h-[250px]">
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <a href="/about">About</a>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <a href="/portfolio">Portfolio</a>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <a href="/contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
         </nav>
-      ) : (
-        <div className="flex items-center justify-between border-b border-gray-400 py-8">
-          <a href="/">Sumit Parida</a>
-          <nav>
-            <section className="MOBILE-MENU flex lg:hidden">
-              <div
-                className="HAMBURGER-ICON space-y-2"
-                onClick={() => setIsNavOpen((prev) => !prev)}
-              >
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              </div>
-
-              <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-                <div
-                  className="absolute top-0 right-0 px-8 py-8"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  <svg
-                    className="h-8 w-8 text-gray-600"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </div>
-                <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="/about">About</a>
-                  </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="/portfolio">Portfolio</a>
-                  </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="/contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#projects">Portfolio</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <style>{`
+        <style>{`
         .hideMenuNav {
           display: none;
         }
@@ -127,8 +106,7 @@ const IndexPage = () => {
           align-items: center;
         }
       `}</style>
-        </div>
-      )}
+      </div>
 
       <main className="flex">
         <div className="content lg:w-[70%] mx-auto">
@@ -440,7 +418,6 @@ const IndexPage = () => {
           </section>
         </div>
       </main>
-
       <footer className="mt-[6rem] mb-[2rem]">
         <p className="w-[100%] text-sm  text-center text-slate-300">
           Designed and Developed by Sumit Parida
