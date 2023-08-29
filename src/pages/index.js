@@ -369,7 +369,7 @@ const IndexPage = () => {
 
           <section
             id="contact"
-            className="lg:w-[50%] w-[100%] mx-auto mt-[14rem] pt-[2.5rem] md:pt-[4rem] text-center scroll-child sec"
+            className="lg:w-[50%] w-[100%] mx-auto mt-[14rem] pt-[2.5rem] md:pt-[4rem] text-center  sec"
           >
             <h1 className="md:text-6xl text-4xl text-slate-600 dark:text-slate-200">
               Send me a message!
@@ -418,12 +418,11 @@ const IndexPage = () => {
           </section>
         </div>
       </main>
-      <footer className="mt-[6rem] mb-[2rem]">
+      <footer className="mt-[6rem] scroll-child mb-[.5rem]">
         <p className="w-[100%] text-sm  text-center text-slate-300">
           Designed and Developed by Sumit Parida
         </p>
       </footer>
-      <div className="scroll-child"></div>
     </body>
   );
 };
