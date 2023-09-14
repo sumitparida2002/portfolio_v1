@@ -220,7 +220,7 @@ const IndexPage = () => {
                 <h2 className="text-slate-600 text-3xl ">Projects</h2>
               </div>
 
-              <div className="flex flex-wrap w-[100%] justify-center  flex-row gap-[30px]">
+              <div className="flex flex-wrap w-[110%] justify-center  flex-row gap-[30px]">
                 <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
                   <div className="thumbSocial"></div>
                   <div className="infos dark:bg-[#112240] bg-white ">
