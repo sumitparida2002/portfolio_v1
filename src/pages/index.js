@@ -214,13 +214,13 @@ const IndexPage = () => {
             </section>
             <section
               id="projects"
-              className="lg:w-[100%] mx-auto  mt-[12rem] pt-[2.5rem] md:pt-[4rem] scroll-child sec"
+              className="lg:w-[90%] mx-auto  mt-[12rem] pt-[2.5rem] md:pt-[4rem] scroll-child sec"
             >
               <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[70%]  ">
                 <h2 className="text-slate-600 text-3xl ">Projects</h2>
               </div>
 
-              <div className="flex flex-wrap w-[110%]   flex-row gap-[30px]">
+              <div className="flex flex-wrap w-[110%] flex-row gap-[30px]">
                 <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
                   <div className="thumbSocial"></div>
                   <div className="infos dark:bg-[#112240] bg-white ">
