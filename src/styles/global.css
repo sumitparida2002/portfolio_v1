@@ -190,6 +190,26 @@ nav{
       display: none;
   }
 
+
+  aside {
+    position: sticky;
+    top: 500px; /* the height of the header (60px) + its bottom margin (20px) */
+  
+    padding: 20px;
+    width: 5%;
+    height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar2{
+    position: sticky;
+    top: 500px; /* the height of the header (60px) + its bottom margin (20px) */
+
+    padding: 20px;
+    width: 5%;
+    height: 20px;
+    margin-bottom: 20px;
+  }
 /* 
   .active {
     background: #64CCC5;
