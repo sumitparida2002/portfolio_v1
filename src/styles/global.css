@@ -8,6 +8,14 @@
   padding: 0 .7rem;
 }
 
+body
+#___gatsby {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .pageLinks .resume{
   padding: 0.4rem 0.725rem;
 
