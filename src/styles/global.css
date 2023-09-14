@@ -78,10 +78,26 @@ nav{
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     overflow: hidden;
   }
-  article.card .thumb {
+  article.card .thumbMusic {
     width: auto;
     height: 72%;
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/new-york-city.png") no-repeat center;
+    background: url("https://dbdzm869oupei.cloudfront.net/img/photomural/preview/73822.png") no-repeat center;
+    background-size: cover;
+    border-radius: 3px;
+  }
+
+
+  article.card .thumbSocial {
+    width: auto;
+    height: 72%;
+    background: url("https://cdn.dribbble.com/users/2816838/screenshots/8751099/deutsch_la_social_illustrations_03_copy-08.png") no-repeat center;
+    background-size: cover;
+    border-radius: 3px;
+  }
+  article.card .thumbChat {
+    width: auto;
+    height: 72%;
+    background: url("https://static.vecteezy.com/system/resources/previews/008/296/859/non_2x/concept-illustration-of-man-and-woman-friends-having-online-conversation-messaging-chatting-communication-texting-messages-in-mobile-phone-apps-flat-cartoon-style-free-vector.jpg") no-repeat center;
     background-size: cover;
     border-radius: 3px;
   }

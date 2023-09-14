@@ -25,7 +25,9 @@ const IndexPage = () => {
               <Link to="#contact">Contact</Link>
             </li>
             <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
-              <Link to="#about">Resume</Link>
+              <Link to="../../public.page-data/FSWEP.pdf" download={true}>
+                Resume
+              </Link>
             </li>
           </div>
         </ul>
@@ -107,7 +109,9 @@ const IndexPage = () => {
         }
       `}</style>
       </div>
-
+      {/* 
+<div></div>
+      <aside className="hidden md:visible">some sidebar content</aside> */}
       <main className="flex">
         <div className="content lg:w-[70%] mx-auto">
           <section
@@ -124,15 +128,17 @@ const IndexPage = () => {
             <h1 className="md:text-6xl text-4xl md:mt-[1rem] font-bold">
               I'm a Full-Stack Web Developer.
             </h1>
-            <p className="md:w-[70%] mt-4 leading-7 md:text-left w-[90%]   ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              possimus tempora minus veniam harum velit accusamus. Expedita
-              error minima dolorem repellat nam deleniti voluptatibus nostrum.
+            <p className="md:w-[90%] mt-4 leading-7 md:text-left w-[90%]   ">
+              I am a developer with a strong foundation in web development
+              technologies, including front-end development tools and back-end
+              programming languages.I am committed to learning and staying
+              up-to-date with emerging technologies to build innovative web
+              applications.
             </p>
           </section>
 
           <section
-            className="lg:w-[70%] mx-auto pt-[2.5rem] md:pt-[4rem] scroll-child sec"
+            className="lg:w-[80%] mx-auto pt-[2.5rem] md:pt-[4rem] scroll-child sec"
             id="about"
           >
             <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[60%]">
@@ -148,33 +154,27 @@ const IndexPage = () => {
               </div>
               <div className="md:w-[60%] w-[100%] mt-8">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
-                  mollitia nesciunt dolore qui labore ipsam similique eos.
-                  Mollitia omnis harum sit, fuga ut rerum voluptates minus eum
-                  neque? Possimus laboriosam molestiae vitae iste. Reprehenderit
-                  eum eos accusamus deserunt, officiis neque necessitatibus
-                  debitis, voluptatem rerum quo ut magnam, distinctio molestias?
-                  At!
+                  Back in 2020, I started learning Python, building console
+                  games and some graphical games for fun. A few months later, I
+                  was and playing around with web scrapers and API's.Fast
+                  forward to today, I am studying web development at Algonquin
+                  College. I've built many projects, such as Chat Apps, Music
+                  Players and E-commerce Website
                 </p>
 
                 <p className="pt-2">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Velit, similique:
+                  While I'm not coding, I spend most of my day exploring new
+                  stuff on internet about tech,space and visual designs. I love
+                  video games, animations and human psychology. I am a super
+                  curious guy who likes to build stuff and programming has given
+                  me the power to build things one can only imagine.
                 </p>
-                <ul className="h-[13%] flex flex-col dark:darkMode flex-wrap mt-4 skillList">
-                  <li>Lorem</li>
-                  <li>Lorem</li>
-                  <li>Lorem</li>
-                  <li>Lorem</li>
-                  <li>Lorem</li>
-                  <li>Lorem</li>
-                </ul>
               </div>
             </div>
           </section>
           <section
             id="projects"
-            className="lg:w-[100%] mx-auto  mt-[10rem] pt-[2.5rem] md:pt-[4rem] scroll-child sec"
+            className="lg:w-[100%] mx-auto  mt-[12rem] pt-[2.5rem] md:pt-[4rem] scroll-child sec"
           >
             <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[70%]  ">
               <h2 className="text-slate-600 text-3xl ">Projects</h2>
@@ -182,10 +182,10 @@ const IndexPage = () => {
 
             <div className="flex flex-wrap w-[100%] justify-center  flex-row gap-[30px]">
               <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
-                <div className="thumb"></div>
+                <div className="thumbSocial"></div>
                 <div className="infos dark:bg-[#112240] bg-white ">
                   <h2 className="title flex px-2 w-[100%] justify-between items-center align-baseline">
-                    <p>Lorem</p>
+                    <p>Social</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -201,25 +201,47 @@ const IndexPage = () => {
                     </svg>
                   </h2>
                   <p className="date text-slate-400 px-2 text-[10px] ">
-                    #React #Javascript
+                    #React #Redux #MERN
                   </p>
                   <div className="h-[80%] flex flex-col justify-between">
                     <p className="txt px-2 dark:text-slate-300 text-slate-800 ">
-                      Join us for our Live Infinity Session in beautiful New
-                      York City. This is a 3 day intensive workshop where you'll
-                      learn how to become
+                      A social media app in which users have abillity to post
+                      images, add friends and like and comment ont other
+                      people's post.
                     </p>
                     <div className="details w-[100%] px-2 flex justify-end gap-6 ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                        viewBox="0 0 16 16"
+                      <a
+                        target="_blank"
+                        href="https://dribbble.com/stories/2021/02/09/social-media-design-tips"
                       >
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
+                          <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                        </svg>
+                      </a>
+                      <a
+                        target="_blank"
+                        href="https://github.com/sumitparida2002/SocialMediaApp"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                      </a>
+
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -243,10 +265,10 @@ const IndexPage = () => {
               </article>
 
               <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95] ">
-                <div className="thumb"></div>
+                <div className="thumbChat"></div>
                 <div className={`infos  dark:bg-[#112240] bg-white `}>
                   <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
-                    <p>Lorem</p>
+                    <p>ChatUp</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -262,26 +284,45 @@ const IndexPage = () => {
                     </svg>
                   </h2>
                   <p className="date text-slate-400 px-2 text-[10px] ">
-                    #React #Javascript
+                    #Firebase #React
                   </p>
                   <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
                     <p className="txt px-2 ">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Porro aliquid est obcaecati iste autem a dolorem
-                      aspernatur libero, soluta iure ipsam quas deleniti
-                      inventore reiciendis
+                      A simple chat app in which users can join multiple chat
+                      rooms and chat up.
                     </p>
                     <div className="details w-[100%] px-2 flex justify-end gap-6 ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                        viewBox="0 0 16 16"
+                      <a
+                        target="_blank"
+                        href="https://static.vecteezy.com/system/resources/previews/008/296/859/non_2x/concept-illustration-of-man-and-woman-friends-having-online-conversation-messaging-chatting-communication-texting-messages-in-mobile-phone-apps-flat-cartoon-style-free-vector.jpg"
                       >
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
+                          <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                        </svg>
+                      </a>
+                      <a
+                        target="_blank"
+                        href="https://github.com/sumitparida2002/ChatApp-W-FireBase"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                      </a>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -305,10 +346,10 @@ const IndexPage = () => {
               </article>
 
               <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
-                <div className="thumb"></div>
+                <div className="thumbMusic"></div>
                 <div className={`infos  dark:bg-[#112240] bg-white `}>
                   <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
-                    <p>Lorem</p>
+                    <p>Tunes</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -324,42 +365,66 @@ const IndexPage = () => {
                     </svg>
                   </h2>
                   <p className="date text-slate-400 px-2 text-[10px]  ">
-                    #React #Javascript
+                    #NextJS #Graphql #Typescript
                   </p>
                   <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
                     <p className="txt px-2 ">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Porro aliquid est obcaecati iste autem a dolorem
-                      aspernatur libero, soluta iure ipsam quas deleniti
+                      A music website in which users can play their favourite
+                      songs and create playlists.
                     </p>
                     <div className="details w-[100%] px-2 flex justify-end gap-6 ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                        viewBox="0 0 16 16"
+                      <a
+                        target="_blank"
+                        href="https://www.tenstickers-canada.com/wall-mural/music-illustration-urban-style-notes-wall-mural-F5823"
                       >
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                        viewBox="0 0 16 16"
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
+                          <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                        </svg>
+                      </a>
+
+                      <a
+                        target="_blank"
+                        href="https://github.com/sumitparida2002/tunes"
                       >
-                        <path
-                          fillRule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fillRule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                      </a>
+
+                      <a target="_blank" href="https://tunes-beta.vercel.app/">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fillRule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -375,9 +440,8 @@ const IndexPage = () => {
               Send me a message!
             </h1>
             <p className="mt-6 text-sm md:text-base ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              labore dolorum itaque culpa, molestias officia autem delectus
-              eligendi, natus vel eos corrupti est eveniet hic.
+              Have a sweet project in mind or just want to say hi? Feel free to
+              send me a message!
             </p>
 
             <div className="w-[100%]">
