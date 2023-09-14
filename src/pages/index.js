@@ -9,9 +9,9 @@ const IndexPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <body className="px-10 pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
+    <body className=" pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
       <div className="scroll-child"></div>
-      <nav className="scroll-child pt-8 hidden md:block ">
+      <nav className="scroll-child px-10 pt-8 hidden md:block ">
         <ul className="flex justify-between items-baseline">
           <div>Sumit Parida</div>
           <div className="flex pageLinks items-baseline ">
@@ -32,7 +32,7 @@ const IndexPage = () => {
           </div>
         </ul>
       </nav>
-      <div className="flex items-center justify-between border-b border-gray-400 py-8 md:hidden">
+      <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden">
         <a href="/">Sumit Parida</a>
         <nav>
           <section className="MOBILE-MENU flex lg:hidden">
@@ -110,7 +110,7 @@ const IndexPage = () => {
       `}</style>
       </div>
 
-      <div className="flex">
+      <div className="flex px-10">
         <aside className="flex flex-col gap-6">
           <a target="_blank" href="https://github.com/sumitparida2002">
             <svg
