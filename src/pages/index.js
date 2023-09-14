@@ -8,10 +8,6 @@ import { useEffect } from "react";
 const IndexPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  window.onload = function () {
-    document.location.hash = "";
-  };
-
   return (
     <body className=" pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
       <div className="scroll-child"></div>
