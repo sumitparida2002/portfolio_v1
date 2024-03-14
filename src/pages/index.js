@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
+import downloadbleFile from "../FSWEP.pdf";
 
 const IndexPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -44,7 +45,7 @@ const IndexPage = () => {
       <nav
         className={
           color
-            ? "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30] "
+            ? "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]/10 "
             : "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10"
         }
       >
@@ -73,10 +74,15 @@ const IndexPage = () => {
                   Contact Me
                 </p>
               </li>
-              <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
-                <Link to="../../public.page-data/FSWEP.pdf" download={true}>
+              <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5] cursor-pointer">
+                <a
+                  href={downloadbleFile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
                   Resume
-                </Link>
+                </a>
               </li>
             </div>
           </ul>
