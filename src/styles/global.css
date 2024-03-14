@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+.html{
+
+}
 
 .pageLinks li{
   padding: 0 .7rem;
@@ -14,6 +17,8 @@ body
     height: 100%;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    
 }
 
 .pageLinks .resume{
@@ -31,7 +36,7 @@ nav{
 
 
 
-.scroll{
+/* .scroll{
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 
@@ -39,7 +44,7 @@ nav{
 
 .scroll-child{
     scroll-snap-align: start;
-}
+} */
 
 .skillList {
     list-style: none; /* Remove default bullets */

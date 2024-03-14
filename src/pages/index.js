@@ -7,22 +7,49 @@ import { useEffect } from "react";
 
 const IndexPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeColor);
+
+  const scroll = (sec) => {
+    const section = document.querySelector(sec);
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
-    <body className=" pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100vh] scroll ">
+    <body className="pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100%] scroll">
       <div className="scroll-child"></div>
-      <nav className="scroll-child px-10 pt-8 hidden md:block ">
+      <nav
+        className={
+          color
+            ? "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30] "
+            : "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10"
+        }
+      >
         <ul className="flex justify-between items-baseline">
           <div>Sumit Parida</div>
           <div className="flex pageLinks items-baseline ">
             <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <Link to="#about">About</Link>
+              <p className="cursor-pointer" onClick={() => scroll("#about")}>
+                About
+              </p>
             </li>
             <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <Link to="#projects">Projects</Link>
+              <p className="cursor-pointer" onClick={() => scroll("#projects")}>
+                Projects
+              </p>
             </li>
             <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <Link to="#contact">Contact</Link>
+              <p className="cursor-pointer" onClick={() => scroll("#contact")}>
+                Contact Me
+              </p>
             </li>
             <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
               <Link to="../../public.page-data/FSWEP.pdf" download={true}>
@@ -32,9 +59,10 @@ const IndexPage = () => {
           </div>
         </ul>
       </nav>
-      <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden">
+
+      <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]">
         <a href="/">Sumit Parida</a>
-        <nav>
+        <div>
           <section className="MOBILE-MENU flex lg:hidden">
             <div
               className="HAMBURGER-ICON space-y-2"
@@ -88,7 +116,7 @@ const IndexPage = () => {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-        </nav>
+        </div>
         <style>{`
         .hideMenuNav {
           display: none;
@@ -155,7 +183,7 @@ const IndexPage = () => {
         <main className="flex">
           <div className="content lg:w-[80%] mx-auto">
             <section
-              className="lg:w-[70%] mt-[4rem]  mx-auto md:mt-[6rem] pb-[8rem] sec"
+              className="lg:w-[70%] mt-[4rem]  mx-auto md:mt-[6rem] pb-[10rem] sec"
               id="landing"
             >
               <p className="text-[#64cc95] dark:text-[#64CCC5] ">
@@ -168,7 +196,7 @@ const IndexPage = () => {
               <h1 className="md:text-6xl text-4xl md:mt-[1rem] font-bold">
                 I'm a Full-Stack Web Developer.
               </h1>
-              <p className="md:w-[90%] mt-4 leading-7 md:text-left w-[90%]   ">
+              <p className="md:w-[90%]  md:text-md mt-4 leading-7 md:text-left w-[90%]   ">
                 I am a developer with a strong foundation in web development
                 technologies, including front-end development tools and back-end
                 programming languages.I am committed to learning and staying
@@ -178,11 +206,13 @@ const IndexPage = () => {
             </section>
 
             <section
-              className="lg:w-[80%] mx-auto pt-[2.5rem] md:pt-[4rem] scroll-child sec"
+              className="lg:w-[95%] mx-auto pt-[2.5rem] md:pt-[4rem] scroll-child sec"
               id="about"
             >
               <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[60%]">
-                <h2 className="text-slate-600 text-3xl ">About Me</h2>
+                <h2 className="text-slate-600 text:xl md:text-3xl ">
+                  About Me
+                </h2>
               </div>
               <div className="md:flex justify-between">
                 <div className="md:w-[35%] w-[100%]  mt-8">
@@ -220,7 +250,7 @@ const IndexPage = () => {
                 <h2 className="text-slate-600 text-3xl ">Projects</h2>
               </div>
 
-              <div className="flex flex-wrap w-[100%] flex-row gap-[30px]">
+              <div className="flex justify-center md:justify-start flex-wrap w-[100%] flex-row gap-[30px]">
                 <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
                   <div className="thumbSocial"></div>
                   <div className="infos dark:bg-[#112240] bg-white ">
@@ -495,7 +525,7 @@ const IndexPage = () => {
                         Your Name
                       </p>
                       <input
-                        className="dark:bg-[#001C30] border-b border-[#64CCC5] focus:border-b-2 focus:outline-none  mt-1 w-[100%] md:w-[90%] text-left    "
+                        className="dark:bg-[#001C30] border-b border-[#64CCC5] focus:border-b-2 pb-2 focus:outline-none  mt-1 w-[100%] md:w-[90%] text-left    "
                         placeholder="Enter your name"
                         name="name"
                       ></input>
@@ -506,7 +536,7 @@ const IndexPage = () => {
                         Your Email
                       </p>
                       <input
-                        className="dark:bg-[#001C30] border-b border-[#64cc95] dark:border-[#64CCC5] focus:border-b-2 focus:outline-none mt-1 w-[100%] "
+                        className="dark:bg-[#001C30] border-b border-[#64cc95] dark:border-[#64CCC5] pb-2 focus:border-b-2 focus:outline-none mt-1 w-[100%] "
                         placeholder="Enter your email"
                         name="email"
                       ></input>
@@ -571,9 +601,7 @@ const IndexPage = () => {
         </a>
       </div>
       <footer className="mt-4 px-10 lg:mt-[6rem]  scroll-child mb-[.5rem]">
-        <p className="w-[100%] text-sm  text-center text-slate-300">
-          Designed and Developed by Sumit Parida
-        </p>
+        <p className="w-[100%] text-sm  text-center text-slate-300">: ]</p>
       </footer>
     </body>
   );
