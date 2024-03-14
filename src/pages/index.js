@@ -128,7 +128,7 @@ const IndexPage = () => {
             </div>
           </section>
 
-          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+          <ul className="DESKTOP-MENU  hidden space-x-8 lg:flex">
             <li>
               <a href="#about">About</a>
             </li>
@@ -206,10 +206,10 @@ const IndexPage = () => {
         <main className="flex">
           <div className="content lg:w-[80%] mx-auto">
             <section
-              className="lg:w-[70%] mt-[4rem]  mx-auto md:mt-[6rem] pb-[10rem] sec"
+              className="lg:w-[70%] mt-[4rem] mx-auto md:mt-[6rem] pb-[10rem] sec"
               id="landing"
             >
-              <p className="text-[#64cc95] dark:text-[#64CCC5] ">
+              <p className="text-[#64cc95]  dark:text-[#64CCC5] ">
                 Hi, my name is
               </p>
 
