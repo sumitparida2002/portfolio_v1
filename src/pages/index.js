@@ -4,11 +4,17 @@ import { Link } from "gatsby";
 
 import { StaticImage } from "gatsby-plugin-image";
 import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const IndexPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [color, setColor] = useState(false);
+  const scrollRef = useRef();
+
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+  const projectRef = useRef(null);
+
   const changeColor = () => {
     if (window.scrollY >= 90) {
       setColor(true);
@@ -17,15 +23,23 @@ const IndexPage = () => {
     }
   };
 
-  window.addEventListener("scroll", changeColor);
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+    scrollElement.addEventListener("scroll", changeColor);
+    return () => {
+      scrollElement.removeEventListener("scroll", changeColor);
+    };
+  }, []);
 
-  const scroll = (sec) => {
-    const section = document.querySelector(sec);
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scroll = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <body className="pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100%] scroll">
+    <body
+      className="pb-5 bod bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider h-[100%] scroll"
+      ref={scrollRef}
+    >
       <div className="scroll-child"></div>
       <nav
         className={
@@ -39,14 +53,14 @@ const IndexPage = () => {
             <div>Sumit Parida</div>
             <div className="flex pageLinks items-baseline ">
               <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-                <p className="cursor-pointer" onClick={() => scroll("#about")}>
+                <p className="cursor-pointer" onClick={() => scroll(aboutRef)}>
                   About
                 </p>
               </li>
               <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
                 <p
                   className="cursor-pointer"
-                  onClick={() => scroll("#projects")}
+                  onClick={() => scroll(projectRef)}
                 >
                   Projects
                 </p>
@@ -54,7 +68,7 @@ const IndexPage = () => {
               <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
                 <p
                   className="cursor-pointer"
-                  onClick={() => scroll("#contact")}
+                  onClick={() => scroll(contactRef)}
                 >
                   Contact Me
                 </p>
@@ -67,64 +81,66 @@ const IndexPage = () => {
             </div>
           </ul>
         </div>
-        <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]">
-          <a href="/">Sumit Parida</a>
-          <div>
-            <section className="MOBILE-MENU flex lg:hidden">
+      </nav>
+
+      <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]">
+        <a href="/">Sumit Parida</a>
+        <div>
+          <section className="MOBILE-MENU flex lg:hidden">
+            <div
+              className="HAMBURGER-ICON space-y-2"
+              onClick={() => setIsNavOpen((prev) => !prev)}
+            >
+              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            </div>
+
+            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
               <div
-                className="HAMBURGER-ICON space-y-2"
-                onClick={() => setIsNavOpen((prev) => !prev)}
+                className="absolute top-0 right-0 px-8 py-8"
+                onClick={() => setIsNavOpen(false)}
               >
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              </div>
-
-              <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-                <div
-                  className="absolute top-0 right-0 px-8 py-8"
-                  onClick={() => setIsNavOpen(false)}
+                <svg
+                  className="h-8 w-8 text-gray-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <svg
-                    className="h-8 w-8 text-gray-600"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </div>
-                <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="#about">About</a>
-                  </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="#projects">Projects</a>
-                  </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="#contact">Contact</a>
-                  </li>
-                </ul>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </div>
-            </section>
+              <ul className="flex flex-col items-center justify-between min-h-[250px]">
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <a href="#about">About</a>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <a href="#projects">Projects</a>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </section>
 
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#projects">Portfolio</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <style>{`
+          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <style>{`
         .hideMenuNav {
           display: none;
         }
@@ -143,8 +159,7 @@ const IndexPage = () => {
           align-items: center;
         }
       `}</style>
-        </div>
-      </nav>
+      </div>
 
       <div className="flex p-1   md:px-10">
         <aside className="flex invisible lg:visible flex-col gap-6 ">
@@ -216,6 +231,7 @@ const IndexPage = () => {
             <section
               className="lg:w-[95%] mx-auto pt-[2.5rem] md:pt-[4rem] scroll-child sec"
               id="about"
+              ref={aboutRef}
             >
               <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[60%]">
                 <h2 className="text-slate-600 text:xl md:text-3xl ">
@@ -253,6 +269,7 @@ const IndexPage = () => {
             <section
               id="projects"
               className="lg:w-[95%] mx-auto  mt-[15rem] pt-[2.5rem] md:pt-[4rem] scroll-child sec"
+              ref={projectRef}
             >
               <div className=" py-0 border-b-[1px] border-slate-300 pb-[3px] dark:border-slate-500 w-[70%]  ">
                 <h2 className="text-slate-600 text-3xl ">Projects</h2>
@@ -516,6 +533,7 @@ const IndexPage = () => {
             <section
               id="contact"
               className="lg:w-[50%] w-[100%] mx-auto mt-[14rem] pt-[2.5rem] md:pt-[4rem] text-center  sec"
+              ref={contactRef}
             >
               <h1 className="md:text-6xl text-4xl text-slate-600 dark:text-slate-200">
                 Send me a message!
