@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { Link } from "gatsby";
 
@@ -33,91 +34,97 @@ const IndexPage = () => {
             : "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10"
         }
       >
-        <ul className="flex justify-between items-baseline">
-          <div>Sumit Parida</div>
-          <div className="flex pageLinks items-baseline ">
-            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <p className="cursor-pointer" onClick={() => scroll("#about")}>
-                About
-              </p>
-            </li>
-            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <p className="cursor-pointer" onClick={() => scroll("#projects")}>
-                Projects
-              </p>
-            </li>
-            <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
-              <p className="cursor-pointer" onClick={() => scroll("#contact")}>
-                Contact Me
-              </p>
-            </li>
-            <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
-              <Link to="../../public.page-data/FSWEP.pdf" download={true}>
-                Resume
-              </Link>
-            </li>
-          </div>
-        </ul>
-      </nav>
-
-      <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]">
-        <a href="/">Sumit Parida</a>
         <div>
-          <section className="MOBILE-MENU flex lg:hidden">
-            <div
-              className="HAMBURGER-ICON space-y-2"
-              onClick={() => setIsNavOpen((prev) => !prev)}
-            >
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            </div>
-
-            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-              <div
-                className="absolute top-0 right-0 px-8 py-8"
-                onClick={() => setIsNavOpen(false)}
-              >
-                <svg
-                  className="h-8 w-8 text-gray-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+          <ul className="flex justify-between items-baseline">
+            <div>Sumit Parida</div>
+            <div className="flex pageLinks items-baseline ">
+              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+                <p className="cursor-pointer" onClick={() => scroll("#about")}>
+                  About
+                </p>
+              </li>
+              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+                <p
+                  className="cursor-pointer"
+                  onClick={() => scroll("#projects")}
                 >
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </div>
-              <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="#about">About</a>
-                </li>
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="#projects">Projects</a>
-                </li>
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="#contact">Contact</a>
-                </li>
-              </ul>
+                  Projects
+                </p>
+              </li>
+              <li className=" hover:text-[#64cc95] dark:text-[#64CCC5]    dark:hover:text-[#64ccc5]">
+                <p
+                  className="cursor-pointer"
+                  onClick={() => scroll("#contact")}
+                >
+                  Contact Me
+                </p>
+              </li>
+              <li className="resume border-[1px] rounded text-[#64cc95] dark:text-[#64CCC5]  border-[#64cc95] dark:border-[#64CCC5] hover:bg-[#64cc95] hover:text-white hover:border-[#64cc95] dark:hover:bg-[#64CCC5] dark:hover:text-white dark:hover:border-[#64CCC5]">
+                <Link to="../../public.page-data/FSWEP.pdf" download={true}>
+                  Resume
+                </Link>
+              </li>
             </div>
-          </section>
-
-          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#projects">Portfolio</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
           </ul>
         </div>
-        <style>{`
+        <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]">
+          <a href="/">Sumit Parida</a>
+          <div>
+            <section className="MOBILE-MENU flex lg:hidden">
+              <div
+                className="HAMBURGER-ICON space-y-2"
+                onClick={() => setIsNavOpen((prev) => !prev)}
+              >
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              </div>
+
+              <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+                <div
+                  className="absolute top-0 right-0 px-8 py-8"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  <svg
+                    className="h-8 w-8 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <ul className="flex flex-col items-center justify-between min-h-[250px]">
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="#about">About</a>
+                  </li>
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="#projects">Projects</a>
+                  </li>
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#projects">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <style>{`
         .hideMenuNav {
           display: none;
         }
@@ -136,7 +143,8 @@ const IndexPage = () => {
           align-items: center;
         }
       `}</style>
-      </div>
+        </div>
+      </nav>
 
       <div className="flex p-1   md:px-10">
         <aside className="flex invisible lg:visible flex-col gap-6 ">
