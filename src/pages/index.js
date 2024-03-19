@@ -6,31 +6,18 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
 import downloadbleFile from "../FSWEP.pdf";
+import { useScrollTop } from "../../hooks/use-scroll";
+import { cn } from "../../lib/utils";
 
 const IndexPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [color, setColor] = useState(false);
-  const scrollRef = useRef();
 
+  const scrollRef = useRef();
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const projectRef = useRef(null);
 
-  const changeColor = () => {
-    if (window.scrollY >= 90) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  };
-
-  useEffect(() => {
-    const scrollElement = scrollRef.current;
-    scrollElement.addEventListener("scroll", changeColor);
-    return () => {
-      scrollElement.removeEventListener("scroll", changeColor);
-    };
-  }, []);
+  const scrolled = useScrollTop();
 
   const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -43,11 +30,10 @@ const IndexPage = () => {
     >
       <div className="scroll-child"></div>
       <nav
-        className={
-          color
-            ? "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]/10 "
-            : "scroll-child px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10"
-        }
+        className={cn(
+          "px-10 py-4 hidden md:block fixed top-0 left-0 right-0 z-10 ",
+          scrolled && "border-b border-[#001C30] bg-[#001c3092] shadow-sm"
+        )}
       >
         <div>
           <ul className="flex justify-between items-baseline">
@@ -89,8 +75,12 @@ const IndexPage = () => {
         </div>
       </nav>
 
-      <div className="flex px-10 items-center justify-between border-b border-gray-400 py-8 md:hidden fixed top-0 left-0 right-0 z-10 shadow-lg dark:bg-[#001C30]">
-        <a href="/">Sumit Parida</a>
+      <div
+        className={cn(
+          "z-50 fixed top-0 w-full p-6  md:hidden dark:bg-[#001C30]",
+          scrolled && "border-b shadow-sm"
+        )}
+      >
         <div>
           <section className="MOBILE-MENU flex lg:hidden">
             <div
