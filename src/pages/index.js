@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 
-import { project } from "../../public/projects/project";
+import { project } from "./../projects/project.js";
 
 import { StaticImage } from "gatsby-plugin-image";
 import { useState } from "react";
