@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
-import { Link } from "gatsby";
+
+import { project } from "../../public/projects/project";
 
 import { StaticImage } from "gatsby-plugin-image";
 import { useState } from "react";
@@ -78,7 +79,7 @@ const IndexPage = () => {
       <div
         className={cn(
           "z-50 fixed top-0 w-full p-6  md:hidden dark:bg-[#001C30]",
-          scrolled && "border-b shadow-sm"
+          scrolled && "shadow-sm"
         )}
       >
         <div>
@@ -272,257 +273,83 @@ const IndexPage = () => {
               </div>
 
               <div className="flex justify-center md:justify-start flex-wrap w-[100%] flex-row gap-[30px]">
-                <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
-                  <div className="thumbSocial"></div>
-                  <div className="infos dark:bg-[#112240] bg-white ">
-                    <h2 className="title flex px-2 w-[100%] justify-between items-center align-baseline">
-                      <p>Social</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-chevron-up"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                        />
-                      </svg>
-                    </h2>
-                    <p className="date text-slate-400 px-2 text-[10px] ">
-                      #React #Redux #MERN
-                    </p>
-                    <div className="h-[80%] flex flex-col justify-between">
-                      <p className="txt px-2 dark:text-slate-300 text-slate-800 ">
-                        A social media app in which users have abillity to post
-                        images, add friends and like and comment ont other
-                        people's post.
-                      </p>
-                      <div className="details w-[100%] px-2 flex justify-end gap-6 ">
-                        <a
-                          target="_blank"
-                          href="https://dribbble.com/stories/2021/02/09/social-media-design-tips"
-                        >
+                {project.map((pr) => {
+                  return (
+                    <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95] ">
+                      <div className={cn("", pr.name)}></div>
+                      <div className={`infos  dark:bg-[#112240] bg-white `}>
+                        <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
+                          <p>{pr.name}</p>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"
                             fill="currentColor"
-                            class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
-                            <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                          </svg>
-                        </a>
-                        <a
-                          target="_blank"
-                          href="https://github.com/sumitparida2002/SocialMediaApp"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                          </svg>
-                        </a>
-
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                          />
-                          <path
-                            fillRule="evenodd"
-                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95] ">
-                  <div className="thumbChat"></div>
-                  <div className={`infos  dark:bg-[#112240] bg-white `}>
-                    <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
-                      <p>ChatUp</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-chevron-up"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                        />
-                      </svg>
-                    </h2>
-                    <p className="date text-slate-400 px-2 text-[10px] ">
-                      #Firebase #React
-                    </p>
-                    <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
-                      <p className="txt px-2 ">
-                        A simple chat app in which users can join multiple chat
-                        rooms and chat up.
-                      </p>
-                      <div className="details w-[100%] px-2 flex justify-end gap-6 ">
-                        <a
-                          target="_blank"
-                          href="https://static.vecteezy.com/system/resources/previews/008/296/859/non_2x/concept-illustration-of-man-and-woman-friends-having-online-conversation-messaging-chatting-communication-texting-messages-in-mobile-phone-apps-flat-cartoon-style-free-vector.jpg"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
-                            <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                          </svg>
-                        </a>
-                        <a
-                          target="_blank"
-                          href="https://github.com/sumitparida2002/ChatApp-W-FireBase"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                          </svg>
-                        </a>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                          />
-                          <path
-                            fillRule="evenodd"
-                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article className="card mt-8 dark:hover:text-[#64CCC5] hover:text-[#64CC95]">
-                  <div className="thumbMusic"></div>
-                  <div className={`infos  dark:bg-[#112240] bg-white `}>
-                    <h2 className="title flex px-2 w-[100%]  justify-between items-center align-baseline">
-                      <p>Tunes</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-chevron-up"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                        />
-                      </svg>
-                    </h2>
-                    <p className="date text-slate-400 px-2 text-[10px]  ">
-                      #NextJS #Graphql #Typescript
-                    </p>
-                    <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
-                      <p className="txt px-2 ">
-                        A music website in which users can play their favourite
-                        songs and create playlists.
-                      </p>
-                      <div className="details w-[100%] px-2 flex justify-end gap-6 ">
-                        <a
-                          target="_blank"
-                          href="https://www.tenstickers-canada.com/wall-mural/music-illustration-urban-style-notes-wall-mural-F5823"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
-                            <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                          </svg>
-                        </a>
-
-                        <a
-                          target="_blank"
-                          href="https://github.com/sumitparida2002/tunes"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                          </svg>
-                        </a>
-
-                        <a
-                          target="_blank"
-                          href="https://tunes-beta.vercel.app/"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                            className="bi bi-chevron-up"
                             viewBox="0 0 16 16"
                           >
                             <path
                               fillRule="evenodd"
-                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                            />
-                            <path
-                              fillRule="evenodd"
-                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
                             />
                           </svg>
-                        </a>
+                        </h2>
+                        <p className="date text-slate-400 px-2 text-[10px] ">
+                          {pr.hashtags.map((has) => has)}
+                        </p>
+                        <div className="h-[80%] flex flex-col justify-between dark:text-slate-300 text-slate-800">
+                          <p className="txt px-2 ">{pr.Descriptions}</p>
+                          <div className="details w-[100%] px-2 flex justify-end gap-6 ">
+                            <a target="_blank" href={pr.links.imageCredit}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-camera text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z" />
+                                <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                              </svg>
+                            </a>
+                            <a target="_blank" href={pr.links.github}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                className="bi bi-github text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                              </svg>
+                            </a>
+                            <a target="_blank" href={pr.links.liveLink}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                className="bi bi-box-arrow-up-right text-slate-300 hover:text-[#64cc95] dark:hover:text-[#64CCC5]"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                                />
+                                <path
+                                  fillRule="evenodd"
+                                  d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                                />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </article>
+                    </article>
+                  );
+                })}
               </div>
             </section>
 
