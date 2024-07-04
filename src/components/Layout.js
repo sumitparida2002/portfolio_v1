@@ -1,39 +1,23 @@
-// import * as React from "react";
-// import { Link } from "gatsby";
+import * as React from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
 
-// const Layout = ({ pageTitle, children }) => {
-//   return (
-//     <div className="scroll-child pt-4">
-//       <nav>
-//         <ul className="flex justify-between items-baseline">
-//           <div>Sumit Parida</div>
-//           <div className="flex pageLinks items-baseline ">
-//             <li>
-//               <Link to="#about">About</Link>
-//             </li>
-//             <li>
-//               <Link to="#projects">Projects</Link>
-//             </li>
-//             <li>
-//               <Link to="#contact">Contact</Link>
-//             </li>
-//             <li className="resume border-2 rounded text-[#64CCC5] border-[#64CCC5]">
-//               <Link to="#about">Resume</Link>
-//             </li>
-//           </div>
-//         </ul>
-//       </nav>
-//       <main>
-//         <h1>{pageTitle}</h1>
-//         {children}
-//       </main>
-//       <footer className="mt-[20rem]">
-//         <p className="w-[100%] text-sm  text-center text-slate-300">
-//           Designed and Developed by Sumit Parida
-//         </p>
-//       </footer>
-//     </div>
-//   );
-// };
+const Layout = ({ children }) => {
+  return (
+    <Theme>
+      <div className="flex flex-col min-h-screen bg-white dark:bg-[#001C30] text-slate-800 dark:text-slate-400 tracking-wider">
+        <Navbar />
+        <div className="flex-grow flex flex-col">
+          <main className="flex-grow flex flex-col lg:w-[80%] mx-auto mt-4 md:mt-10">
+            {children}
+          </main>
+        </div>
+        <Footer />
+      </div>
+    </Theme>
+  );
+};
 
-// export default Layout;
+export default Layout;
